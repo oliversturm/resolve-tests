@@ -24,31 +24,6 @@ const App = ({ staticPath }) => {
     <div>
       <div>
         <Helmet title="reSolve Hello World" link={links} meta={[meta]} />
-        {/* <Navbar>
-          <Navbar.Text>
-            <Image src={`${staticPath}/resolve-logo.png`} /> Hello World Example
-          </Navbar.Text>
-
-          <Navbar.Collapse>
-            <Navbar.Text pullRight>
-              <Navbar.Link href="https://facebook.com/resolvejs/">
-                <Image src={`${staticPath}/fb-logo.png`} />
-              </Navbar.Link>
-            </Navbar.Text>
-
-            <Navbar.Text pullRight>
-              <Navbar.Link href="https://twitter.com/resolvejs">
-                <Image src={`${staticPath}/twitter-logo.png`} />
-              </Navbar.Link>
-            </Navbar.Text>
-
-            <Navbar.Text pullRight>
-              <Navbar.Link href="https://github.com/reimagined/resolve">
-                <Image src={`${staticPath}/github-logo.png`} />
-              </Navbar.Link>
-            </Navbar.Text>
-          </Navbar.Collapse>
-        </Navbar> */}
       </div>
 
       <CustomerOverview />
