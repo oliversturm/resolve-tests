@@ -1,0 +1,16 @@
+#!/bin/bash
+
+http -j POST http://localhost:3000/api/commands aggregateName=customer type=createCustomer aggregateId=1 payload:='{"name":"Willy", "location": "New York"}'
+http -j POST http://localhost:3000/api/commands aggregateName=customer type=createCustomer aggregateId=2 payload:='{"name":"Bob", "location": "Vienna"}'
+http -j POST http://localhost:3000/api/commands aggregateName=customer type=createCustomer aggregateId=3 payload:='{"name":"Anna", "location": "Madrid"}'
+http -j POST http://localhost:3000/api/commands aggregateName=customer type=createCustomer aggregateId=4 payload:='{"name":"Jane", "location": "Chicago"}'
+http -j POST http://localhost:3000/api/commands aggregateName=customer type=createCustomer aggregateId=5 payload:='{"name":"Suzy", "location": "Seattle"}'
+http -j POST http://localhost:3000/api/commands aggregateName=customer type=createCustomer aggregateId=6 payload:='{"name":"Charly", "location": "Miami"}'
+http -j POST http://localhost:3000/api/commands aggregateName=customer type=createCustomer aggregateId=7 payload:='{"name":"Clive", "location": "Colorado"}'
+http -j POST http://localhost:3000/api/commands aggregateName=customer type=createCustomer aggregateId=8 payload:='{"name":"Jim", "location": "Los Angeles"}'
+http -j POST http://localhost:3000/api/commands aggregateName=customer type=createCustomer aggregateId=9 payload:='{"name":"Carl", "location": "Rome"}'
+http -j POST http://localhost:3000/api/commands aggregateName=customer type=createCustomer aggregateId=10 payload:='{"name":"John", "location": "Melbourne"}'
+http -j POST http://localhost:3000/api/commands aggregateName=customer type=createCustomer aggregateId=11 payload:='{"name":"Andy", "location": "Tokyo"}'
+http -j POST http://localhost:3000/api/commands aggregateName=customer type=createCustomer aggregateId=12 payload:='{"name":"Paul", "location": "Paris"}'
+http -j POST http://localhost:3000/api/commands aggregateName=customer type=createCustomer aggregateId=13 payload:='{"name":"Sybil", "location": "Berlin"}'
+http -j POST http://localhost:3000/api/commands aggregateName=customer type=createCustomer aggregateId=14 payload:='{"name":"Mary", "location": "London"}'
