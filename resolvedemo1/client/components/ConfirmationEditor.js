@@ -1,9 +1,9 @@
 import React from 'react';
 import { Button } from 'react-bootstrap';
-import { useCommand } from 'resolve-react-hooks';
+import { useReduxCommand } from 'resolve-redux';
 
 const ConfirmationEditor = ({ confirmed, id: aggregateId }) => {
-  const confirm = useCommand(
+  const { execute: confirm } = useReduxCommand(
     {
       type: 'confirmCustomer',
       aggregateId,

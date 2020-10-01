@@ -15,20 +15,23 @@ const CustomerOverview = () => {
       args: {},
     },
     null,
-    // tried to catch an error using this delegate, when giving
-    // an invalid read model name above - but the delegate wasn't
-    // called
+    // This block was used to test error handling (simply by
+    // modifying the read model name above to something invalid) -
+    // I can see the error in here, but the browser still reports
+    // it as uncaught.
     // {
-    //   failure: (_, err) => {
-    //     console.log(`Err: ${JSON.stringify(err)}`);
+    //   actions: {
+    //     failure: (_, err) => {
+    //       console.log('Err:', err);
+    //     },
     //   },
     // },
     []
   );
 
-  // should be possible (or even cleaner) to pass
+  // Should be possible (or even cleaner) to pass
   // [fetchCustomers] here for the dependencies, but somehow
-  // this gives me and endless loop - bug?
+  // this gives me an endless loop and a hanging browser - bug?
   useEffect(fetchCustomers, []);
 
   const { status, data: customers } = useSelector(customerOverviewSelector);
@@ -38,18 +41,13 @@ const CustomerOverview = () => {
       <Row>
         <Col>
           {/* <Alert>{JSON.stringify(status)}</Alert> */}
-          {
-            /* {error ? (
-            <Alert variant="danger">{error}</Alert>
-          ) : */
-            customers && customers.length ? (
-              <CustomerOverviewTable customers={customers} />
-            ) : customers ? (
-              <Alert>No customers found</Alert>
-            ) : (
-              <Spinner animation="border" variant="primary" />
-            )
-          }
+          {customers && customers.length ? (
+            <CustomerOverviewTable customers={customers} />
+          ) : customers ? (
+            <Alert>No customers found</Alert>
+          ) : (
+            <Spinner animation="border" variant="primary" />
+          )}
         </Col>
       </Row>
     </Container>

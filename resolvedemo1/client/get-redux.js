@@ -1,8 +1,7 @@
-import optimisticCustomers from './reducers/optimistic-customers';
 import { devToolsEnhancer } from 'redux-devtools-extension';
 
 const getRedux = () => ({
-  reducers: { optimisticCustomers },
+  reducers: {},
   enhancers: [devToolsEnhancer()],
 });
 
