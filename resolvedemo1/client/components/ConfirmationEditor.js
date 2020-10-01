@@ -1,13 +1,22 @@
 import React from 'react';
 import { Button } from 'react-bootstrap';
-import { useCommand } from 'resolve-react-hooks';
+import { useReduxCommand } from 'resolve-redux';
+import { CUSTOMER_CONFIRMED } from '../actions/optimistic-customers';
 
 const ConfirmationEditor = ({ confirmed, id: aggregateId }) => {
-  const confirm = useCommand(
+  const { execute: confirm } = useReduxCommand(
     {
       type: 'confirmCustomer',
       aggregateId,
       aggregateName: 'customer',
+    },
+    {
+      actions: {
+        success: (cmd) => ({
+          type: CUSTOMER_CONFIRMED,
+          payload: { id: cmd.aggregateId },
+        }),
+      },
     },
     [aggregateId]
   );

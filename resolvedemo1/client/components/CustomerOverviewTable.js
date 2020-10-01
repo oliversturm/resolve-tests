@@ -1,7 +1,6 @@
 import React from 'react';
 import { Table } from 'react-bootstrap';
 import ConfirmationEditor from './ConfirmationEditor';
-import ConfirmationEditorWithInternalState from './ConfirmationEditorWithInternalState';
 
 const CustomerOverviewTable = ({ customers }) => {
   return (
@@ -25,14 +24,8 @@ const CustomerOverviewTable = ({ customers }) => {
               <td>{lastChangedTimestamp}</td>
               <td>{name}</td>
               <td>
-                <ConfirmationEditorWithInternalState
-                  confirmed={confirmed}
-                  id={id}
-                />
-              </td>
-              {/* <td>
                 <ConfirmationEditor confirmed={confirmed} id={id} />
-              </td> */}
+              </td>
             </tr>
           )
         )}
