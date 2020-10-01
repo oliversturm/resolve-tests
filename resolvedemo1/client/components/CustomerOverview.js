@@ -14,7 +14,7 @@ const CustomerOverview = () => {
       resolver: 'overview',
       args: {},
     },
-    [],
+    null,
     // tried to catch an error using this delegate, when giving
     // an invalid read model name above - but the delegate wasn't
     // called
