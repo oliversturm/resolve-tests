@@ -2,7 +2,7 @@ import React from 'react';
 import { Helmet } from 'react-helmet';
 import PropTypes from 'prop-types';
 import { Container } from 'react-bootstrap';
-import ProductOverview from '../components/ProductOverview';
+import ProductOverview from './ProductOverview';
 
 const App = ({ staticPath }) => {
   const stylesheetLink = {

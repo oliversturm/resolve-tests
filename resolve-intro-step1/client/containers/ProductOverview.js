@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useQuery } from 'resolve-react-hooks';
 import { Alert, Spinner } from 'react-bootstrap';
-import ProductList from './ProductList';
+import ProductList from '../components/ProductList';
 
 const ProductOverview = () => {
   // Local state: list of products, and error placeholder
