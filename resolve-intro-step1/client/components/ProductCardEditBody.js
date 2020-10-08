@@ -14,27 +14,22 @@ const fileAsData = (file) =>
     : Promise.resolve();
 
 const ProductCardEditBody = ({ editingExisting, product, endEditing }) => {
-  const [state, setState] = useState({
-    name: editingExisting ? product.name : '',
-    nameIsInvalid: false,
-    image: undefined,
-  });
+  const [name, setName] = useState(editingExisting ? product.name : '');
+  const [nameIsInvalid, setNameIsInvalid] = useState(false);
+  const [image, setImage] = useState();
 
-  const productNameChanged = useCallback(
+  const nameChanged = useCallback(
     (e) => {
-      setState({ ...state, name: e.target.value });
+      setName(e.target.value);
     },
-    [setState, state]
+    [setName]
   );
 
-  const productImageChanged = useCallback(
+  const imageChanged = useCallback(
     (e) => {
-      setState({
-        ...state,
-        image: e.target.files[0],
-      });
+      setImage(e.target.files[0]);
     },
-    [setState, state]
+    [setImage]
   );
 
   const createProduct = useCommandBuilder(
@@ -60,12 +55,12 @@ const ProductCardEditBody = ({ editingExisting, product, endEditing }) => {
   const handleSubmit = useCallback(
     (e) => {
       e.preventDefault();
-      if (!editingExisting && !state.name) {
-        setState({ ...state, nameIsInvalid: true });
+      if (!editingExisting && !name) {
+        setNameIsInvalid(true);
       } else {
-        fileAsData(state.image).then((imageData) => {
+        fileAsData(image).then((imageData) => {
           const data = {
-            name: state.name,
+            name,
             image: imageData || (product && product.image),
           };
           if (editingExisting) updateProduct({ id: product.id, ...data });
@@ -77,8 +72,9 @@ const ProductCardEditBody = ({ editingExisting, product, endEditing }) => {
     [
       editingExisting,
       product,
-      setState,
-      state,
+      name,
+      image,
+      setNameIsInvalid,
       updateProduct,
       createProduct,
       endEditing,
@@ -93,17 +89,17 @@ const ProductCardEditBody = ({ editingExisting, product, endEditing }) => {
           <Form.Control
             type="text"
             placeholder="Enter product name"
-            value={state.name}
-            isInvalid={state.nameIsInvalid}
-            onChange={productNameChanged}
+            value={name}
+            isInvalid={nameIsInvalid}
+            onChange={nameChanged}
           />
         </Form.Group>
         <Form.Group>
           <Form.Label>Product Image</Form.Label>
           <Form.File
-            label={(state.image && state.image.name) || 'Upload product image'}
+            label={(image && image.name) || 'Upload product image'}
             custom
-            onChange={productImageChanged}
+            onChange={imageChanged}
           />
         </Form.Group>
 

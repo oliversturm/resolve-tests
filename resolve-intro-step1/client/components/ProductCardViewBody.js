@@ -7,7 +7,7 @@ const ProductCardViewBody = ({ product, startEditing }) => {
   return (
     <>
       {product.image && <Card.Img variant="top" src={product.image} />}
-      <Card.Body>
+      <Card.Body className="mt-auto flex-grow-0">
         <Card.Title>{product.name}</Card.Title>
         <Button variant="primary" onClick={startEditing}>
           <Pencil />
