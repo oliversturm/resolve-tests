@@ -1,6 +1,8 @@
 import React from 'react';
 import { Helmet } from 'react-helmet';
 import PropTypes from 'prop-types';
+import { Container } from 'react-bootstrap';
+import ProductOverview from '../components/ProductOverview';
 
 const App = ({ staticPath }) => {
   const stylesheetLink = {
@@ -24,7 +26,9 @@ const App = ({ staticPath }) => {
       <div>
         <Helmet title="reSolve Introduction" link={links} meta={[meta]} />
       </div>
-      <h1 align="center">reSolve Introduction</h1>
+      <Container style={{ marginTop: '20px' }}>
+        <ProductOverview />
+      </Container>
     </div>
   );
 };
