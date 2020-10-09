@@ -7603,7 +7603,7 @@ jsonify@~0.0.0:
   resolved "https://registry.yarnpkg.com/jsonify/-/jsonify-0.0.0.tgz#2c74b6ee41d93ca51b7b5aaee8f503631d252a73"
   integrity sha1-LHS27kHZPKUbe1qu6PUDYx0lKnM=
 
-jsonwebtoken@^8.3.0:
+jsonwebtoken@^8.3.0, jsonwebtoken@^8.5.1:
   version "8.5.1"
   resolved "https://registry.yarnpkg.com/jsonwebtoken/-/jsonwebtoken-8.5.1.tgz#00e71e0b8df54c2121a1f26137df2280673bcc0d"
   integrity sha512-XjwVfRS6jTMsqYs0EsuJ4LGxXV14zQybNd4L2r0UvbVnSF9Af8x7p5MzbJ90Ioz/9TI41/hTCvznF/loiSzn8w==
@@ -9006,6 +9006,18 @@ pascalcase@^0.1.1:
   resolved "https://registry.yarnpkg.com/pascalcase/-/pascalcase-0.1.1.tgz#b363e55e8006ca6fe21784d2db22bd15d7917f14"
   integrity sha1-s2PlXoAGym/iF4TS2yK9FdeRfxQ=
 
+passport-local@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/passport-local/-/passport-local-1.0.0.tgz#1fe63268c92e75606626437e3b906662c15ba6ee"
+  integrity sha1-H+YyaMkudWBmJkN+O5BmYsFbpu4=
+  dependencies:
+    passport-strategy "1.x.x"
+
+passport-strategy@1.x.x:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/passport-strategy/-/passport-strategy-1.0.0.tgz#b5539aa8fc225a3d1ad179476ddf236b440f52e4"
+  integrity sha1-tVOaqPwiWj0a0XlHbd8ja0QPUuQ=
+
 path-browserify@0.0.1:
   version "0.0.1"
   resolved "https://registry.yarnpkg.com/path-browserify/-/path-browserify-0.0.1.tgz#e6c4ddd7ed3aa27c68a20cc4e50e1a4ee83bbc4a"
@@ -10088,6 +10100,16 @@ resolve-local-rpc@0.25.8:
   integrity sha512-sz5ajTo8KP1Q/njuZhtAvgvgPq4k8p2U4BxFxJyEDkUP/FtkKWQTgseTE29iYDjpkioYzkQ5TZ2F3t7HApXAfQ==
   dependencies:
     "@babel/runtime" "7.9.6"
+
+resolve-module-auth@^0.25.12:
+  version "0.25.12"
+  resolved "https://registry.yarnpkg.com/resolve-module-auth/-/resolve-module-auth-0.25.12.tgz#7d0179d926cb5c5d2fdca1a4ca0dd2fc4d7cc573"
+  integrity sha512-bcq4SsA1erXVfz12U1Fc2ioIp3MOp7VOibp25CTeyZI9CrtdOQVowuO0p/N9nD095sRT0C5jepzJW+fm9XvK9g==
+  dependencies:
+    "@babel/runtime" "7.9.6"
+    iconv-lite "0.4.24"
+    isomorphic-fetch "2.2.1"
+    uuid "3.3.2"
 
 resolve-query@0.25.8:
   version "0.25.8"

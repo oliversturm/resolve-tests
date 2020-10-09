@@ -22,6 +22,13 @@ const appConfig = {
   //     deserializeState: 'common/view-models/customersView.deserialize_state.js',
   //   },
   // ],
+  apiHandlers: [
+    {
+      path: '/api/$ttr',
+      handler: 'common/api-handlers/ttr.js',
+      method: 'POST',
+    },
+  ],
   clientEntries: ['client/index.js'],
 };
 
