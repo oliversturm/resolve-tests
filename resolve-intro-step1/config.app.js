@@ -21,6 +21,7 @@ const appConfig = {
       projection: 'common/view-models/products.projection.js',
       serializeState: 'common/view-models/products.serialize_state.js',
       deserializeState: 'common/view-models/products.deserialize_state.js',
+      resolver: 'common/view-models/products.resolver.js',
     },
   ],
   clientEntries: ['client/index.js'],
