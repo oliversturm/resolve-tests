@@ -14,14 +14,15 @@ const appConfig = {
       connectorName: 'default',
     },
   ],
-  // viewModels: [
-  //   {
-  //     name: 'customersView',
-  //     projection: 'common/view-models/customersView.projection.js',
-  //     serializeState: 'common/view-models/customersView.serialize_state.js',
-  //     deserializeState: 'common/view-models/customersView.deserialize_state.js',
-  //   },
-  // ],
+  viewModels: [
+    {
+      name: 'customersView',
+      projection: 'common/view-models/customersView.projection.js',
+      serializeState: 'common/view-models/customersView.serialize_state.js',
+      deserializeState: 'common/view-models/customersView.deserialize_state.js',
+      resolver: 'common/view-models/customersView.resolver.js',
+    },
+  ],
   apiHandlers: [
     {
       path: '/api/$ttr',
